@@ -1,0 +1,23 @@
+$header-height: 50px;
+$menu-width: 300px;
+.ng-header {
+  border: 1px solid red;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  box-sizing: border-box;
+  height: $header-height;
+}
+.ng-main-body {
+  width: 100%;
+  height: calc(100vh - $header-height);
+
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.ng-main-menu{
+  width: calc(100% - $menu-width);
+}
+mat-sidenav {
+  width: 200px;
+}
