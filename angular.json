@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-spider": {
+    "ng-App": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-spider",
+            "outputPath": "dist/ng-App",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-spider:build:production"
+              "browserTarget": "ng-App:build:production"
             },
             "development": {
-              "browserTarget": "ng-spider:build:development"
+              "browserTarget": "ng-App:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-spider:build"
+            "browserTarget": "ng-App:build"
           }
         },
         "test": {

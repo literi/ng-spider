@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,8 +18,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DashbardComponent } from './dashbard/dashbard.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatInputModule } from '@angular/material/input';
 import { AuthComponent } from './auth/auth.component';
 import { ApiInjector } from './core/ApiInjector';
+import { LoginComponent } from './login/login.component';
+import { PopupComponent } from './core/popup/popup.component';
+import { PopupService } from './core/popup/popup.service';
+import { UserStateService } from './core/state/UserStateService';
+// import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +34,8 @@ import { ApiInjector } from './core/ApiInjector';
     DashbardComponent,
     DashboardComponent,
     AuthComponent,
+    LoginComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +56,13 @@ import { ApiInjector } from './core/ApiInjector';
     MatTreeModule,
     MatIconModule,
     HttpClientModule,
+    MatInputModule,
+    // MatChipsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInjector, multi: true },
+    PopupService,
+    UserStateService,
   ],
   bootstrap: [AppComponent],
 })

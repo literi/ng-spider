@@ -1,5 +1,60 @@
-<p>
-  login works!
-
-  <button (click)="onImgClick()">1234567890p</button>
-</p>
+<div class="app-login">
+  <div class="app-form">
+    <form [formGroup]="formData" (submit)="onSubmit()" class="form-outer">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>用户名</mat-label>
+        <input
+          matInput
+          placeholder="请输入用户名"
+          formControlName="username"
+          required
+        />
+        <mat-error *ngIf="formData.get('username')?.invalid">
+          用户名不能为空
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>密 码</mat-label>
+        <input
+          matInput
+          placeholder="请输入密码"
+          formControlName="password"
+          required
+          type="password"
+        />
+        <mat-error *ngIf="formData.get('password')?.invalid">
+          登录密码不能为空
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>验证码</mat-label>
+        <input
+          matInput
+          placeholder="请输入验证码"
+          formControlName="code"
+          required
+        />
+        <mat-error *ngIf="formData.get('code')?.invalid">
+          验证码不能为空
+        </mat-error>
+        <div matSuffix>
+          <img [src]="imgCode" (click)="onImgClick(null, $event)" />
+        </div>
+      </mat-form-field>
+      <span class="img-click" (click)="onImgClick(null, $event)">
+        看不清验证码?点击“刷新”
+      </span>
+      <div class="flex-btn">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="formData.invalid"
+          type="submit"
+        >
+          登录
+        </button>
+        <button mat-raised-button color="primary">注册</button>
+      </div>
+    </form>
+  </div>
+</div>

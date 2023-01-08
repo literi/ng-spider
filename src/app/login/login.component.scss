@@ -1,0 +1,35 @@
+.app-login{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right,#fbc2eb,#a6c1ee);
+  .app-form{
+
+    width: 370px;
+    height: 300px;
+    padding: 20px;
+    border: 1px solid #683ab784;
+    border-radius: 5px;
+    .form-outer{
+      width: 100%;
+      .form-field{
+        width: 100%;
+      }
+    }
+  }
+  .flex-btn{
+    button{
+      margin-right: 8px;
+    }
+  }
+}
+
+.img-click{
+  display: inline-block;
+  padding: 5px 0;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}

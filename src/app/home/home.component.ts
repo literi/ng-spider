@@ -4,6 +4,7 @@ import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
 } from '@angular/material/tree';
+import { UserStateService } from '../core/state/UserStateService';
 /**
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
@@ -103,9 +104,16 @@ export class HomeComponent {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
+  constructor(private userStateService: UserStateService) {
     this.dataSource.data = TREE_DATA;
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+  ngOnInit(): void {
+    setInterval(() => {
+      const apk = this.userStateService.getUserState().getValue();
+      console.log('请求数据', apk);
+    }, 3000);
+  }
 }

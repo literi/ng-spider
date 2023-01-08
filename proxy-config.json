@@ -4,6 +4,7 @@
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
+    "withCredentials": true,
     "pathRewrite": {
       "^/api": ""
     }
